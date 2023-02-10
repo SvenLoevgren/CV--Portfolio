@@ -1,108 +1,135 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CV -Summary
+![image](https://user-images.githubusercontent.com/119969411/218035466-ee3d5b21-e4c1-4e99-a6ce-e11666ecffa0.png)
 
-Welcome SvenLoevgren,
+The __*Portfolio 3*__ is an APP, based on a *Python* terminal (which runs in Code Institutes Mock Terminal on Heroku).
+The APP provides an automation of reporting logistics by the "*End User*"... Where data is filled into the Terminal, via an Input field - which in return - updates a *SpreadSheet*, for existing and future logistics for their company market sales.
+This APP will improve the collaboration between business units in a *company* and at the same time "__refactor__" their sales market - for better controlled and optimized sales.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Features
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The __*"Portfolio 3"*__ APP has:
 
-## Gitpod Reminders
+* A Python Terminal and a *Google Spread sheet (gspread)* controlled via an API, from the Terminal.
+* The terminal works as a "Macro" for this *gspread* - where all the Calculation relies on the Python Modeling.
+* There is a *timestamp* added to the *gspread* for all new stock calculated rows - so that the user can easy track their Market, and "if wanted" store old-data.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Existing Features
 
-`python3 -m http.server`
+### The Landing page
 
-A blue button should appear to click: _Make Public_,
+![image](https://user-images.githubusercontent.com/119969411/218036626-3b20d924-7cbd-4e34-b9bb-6c48262e0ef1.png)
 
-Another blue button should appear to click: _Open Browser_.
+### The Details
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![image](https://user-images.githubusercontent.com/119969411/218036815-d8c17592-1ae8-4084-87d3-d458a62531f2.png)
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+### The Form
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![image](https://user-images.githubusercontent.com/119969411/218036204-f7088942-aee4-441d-a06f-510678c81100.png)
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- There is an *Input* field in the Terminal, which is open for an entry when the APP runs.
+  * To update sales figures
+- There is also validation of all data that has been entered within the *Input* field.
+  * Validation of gspread data Range
+  * Validation gspread data Len
+  * Validation of Int numbers
+  * Validation of comma separation (for gspread updates)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### The download
 
-------
+![image](https://user-images.githubusercontent.com/119969411/218036323-d5d376d7-d8d3-4375-998d-97914b9fe34d.png)
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+There is a Calculation of all 3 worksheets in this gspread (via python code), to state existing stock, surplus data, sales from end-user input and a print of needed stock for the next sales market.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### The footer
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![image](https://user-images.githubusercontent.com/119969411/218037373-5e5d6847-bff4-4f09-ae64-c728fbbe1f33.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Future Features
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The APP will be able to:
+* Add timestamps to all worksheets within the gspread.
+* The Terminal will have a predefined -*"clear" Terminal*- entry, after each run.
+* The Error codes thrown to the end-users, will be overviewed, and adjusted accordingly, to make them more “*readable*”.
+* The *gspread* will be cleared from old-data, to pass this data to a separate worksheet-history sheet.
+  - This can be done with a scheduled job.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+# Getting Set-up
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![image](https://user-images.githubusercontent.com/119969411/218037707-63057348-3971-49ea-82e3-3398c2e8005b.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+There needs to be a timestamp and a gspread module for the APP to be able to run and execute commands... there for you need to add these Modules in Gitpod:
+* For these three imports in the .py file - as shown In the image above, make sure that:
+   1. For Two imports… the *gspread* and its *API*:
+      - These two Imports needs an installation via the Gitpod Terminal (Terminal command: *pip3 install gspread google-auth* )
+      - Note: Default gspread added below this line, but It needs to be set up in Google drive and Google cloud API to work, together with the cred.json file credentials.
+        - https://docs.google.com/spreadsheets/d/1OPUMRFogoomR358iH9mxmdqe6XuXhQ_8nCONxVfFuRQ/edit?usp=sharing
+   2. One import (See image above) is for the timestamp module
+      - The Import for the Timestamp will work with no installation in Gitpod, though it is a part of Python Modelling (and stating IMPORT of this module in the .py file is enough).
+      
+![image](https://user-images.githubusercontent.com/119969411/218038803-7d2b89b9-99b0-4b2b-9271-4d392a3ef985.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# Testing
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The site has been tested within the timeline and resources given, on different devices and different browsers.
+PEP8 check has been done, before deployment.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Validator Testing
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![image](https://user-images.githubusercontent.com/119969411/218037850-dbd9899b-4dac-43f5-9c11-48f65f59e4f1.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### PEP8
+No errors were returned when passing through the Code Institutes PEP8 validator.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Functional Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Bugs -Solved
 
-------
+There was a "*Typo*" found regarding the "next line function" which was changed from "/n" to "\n".
+  - This peace of code could probably just have been deleted, but the overall view looked leaner to when the end-user input field appeared below the input statement, and this change also provided for some extra characters to be added to the input field -for future features (though the line break now allows more width for the input – without the need to adjust the screen width in the GUI).
 
-## FAQ about the uptime script
+### Bugs -Remaining
 
-**Why have you added this script?**
+![image](https://user-images.githubusercontent.com/119969411/218038372-269a49b2-3888-4ef9-90d4-610ef37b1607.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The errors printed to the end-user when typing other things into the Terminal - except comma separated numbers - are confusing (for a non-programmer).
+- These Bugs will be remaining though the message still ends up with __*invalid data- please try again!*__ and after that error is thrown, a clear text of what is expected of the users input is printed within the Terminal (see IMAGES).
+  * Note that the "__*Less than 6 numbers*__" errors are all okay (Readable for end-users) - so there is only a need for changes in the "try" statement for all other validation errors, __within a future release__.
+  * An introduction course -together with a 1st and a 2nd line support- would easy handle this "bug"!... also… for an end-user to type in "*bananas*" in a terminal, that clearly states how to and what numbers to type in there, after an *end user introduction*...well… that’s a far more serious Issue than the actual bug itself!
+    - *BUG REMAINS for future a release! *
 
-**How will this affect me?**
+# Deployment
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Steps
+1. Ignore file - checked for the CREDS to not be pushed to Github.
+  - This was done via the Gitpod terminal command ( pip freeze > requirements.txt ).
+2. Repository pushed to Github.
+3. Heroku CREDS and PORT keys updated with needed values.
+4. Build Packs added to Heroku
+   1. python
+   2. node.js
+5. Link Heroku APP with Github repository
+6. Deploy In Heroku (A manually deploy to main was used)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Links
+The site was deployed via GitHub pages:
+The __live__ link can be found here - https://portfolio3.herokuapp.com/
+(Link for Code: https://github.com/SvenLoevgren/portfolio-3 ).
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+# Credits
 
-**So….?**
+Code Institute education in general coding with python- including advice of where to find free content on the web to style the APP, plus tools to use to validate the code, plus code content and how to work with external objects with python via API.
+Extra credit to my mentor given by Code Institute, for making it possible to understand the logic of coding and troubleshooting this APP.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Content
+The Site and layout was taken from Code institute "Love Sandwiches" project... I then adjusted it all to fit the "Protfolio 3" project/APP- with adding features as styling external gspread and adding timestamps etc.
+Instructions on how to implement the *"dictionary, to be displayed at the end of the code running in the APP - for the end users next market advice"*, was taken from the Code Institute education material.
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Media
+Initial Spreadsheet from Code Institute "Love Sandwiches project"
+Google Drive and API used for connecting to the Spreadsheet.
+Heroku Used for APP release.
+Over all -  The whole project was built and released with the assistance of Code Institute and based on their "Love Sandwiches" project.
