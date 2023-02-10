@@ -8,11 +8,11 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log("SUCCESS", response);
-            alert("Your project request has been sent. We will get back to you soon!");
+            alert("Thanks... your Job offer has been sent. I will get back to you soon!");
         },
         function(error) {
             console.log("FAILED", error);
-            alert("There was an error sending your project request. Please try again later.");
+            alert("There was an error sending your Job offer. Please try again later.");
         }
     );
     return false;  // To block from loading a new page
